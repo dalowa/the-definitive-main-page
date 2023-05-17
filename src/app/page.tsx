@@ -17,7 +17,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="bg-gray-900 min-h-screen">
         <section className="w-full flex justify-center items-center py-5 px-2 sm:py-7 md:p-10">
           <UltimateSearchBar />
         </section>

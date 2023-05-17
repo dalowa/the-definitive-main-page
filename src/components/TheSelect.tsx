@@ -20,20 +20,20 @@ export default function TheSelect({ options }: Select) {
   return (
     <>
       <label
-        className="flex w-1/3 cursor-pointer flex-col"
+        className="flex w-1/3 cursor-pointer flex-col   "
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
         onClick={handleHover}
       >
-        <h3 className="w-full bg-sky-700 text-center py-2 px-3 text-white md:text-4xl md:py-2">
+        <h3 className="w-full bg-green-500 text-center py-2 px-3 text-white md:text-4xl md:py-2">
           {options[index]}
         </h3>
 
         {isOpen ? (
-          <ul className="w-full text-center  bg-green-500 py-2 px-1 gap-3 flex flex-col">
+          <ul className="w-full text-center  bg-green-800 py-2 px-1 gap-3 flex flex-col">
             {options.map((e, i) => (
               <li
-                className="cursor-pointer text-slate-900 py-1 px-2 border border-gray-900 bg-green-400 hover:bg-green-300"
+                className="cursor-pointer text-slate-900 py-1 px-2 border border-gray-900 bg-green-400 hover:bg-green-200"
                 key={i}
                 onClick={() => changeIndex(i)}
               >

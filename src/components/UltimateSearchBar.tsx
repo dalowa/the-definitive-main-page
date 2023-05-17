@@ -9,39 +9,11 @@ export default function UltimateSearchBar() {
 
   const [inputValue, setInputValue] = useState("");
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-    /* window.alert(`La tecla es: ${event.code}`); */
-    if (event.code === "Enter" || event.code === "Go") {
-      event.preventDefault(); // Prevenir comportamiento por defecto (enviar formulario)
-      let transformed;
-      if (Object.keys(options)[index] == "ECOSIA") {
-        transformed = inputValue
-          .toLowerCase()
-          .replace(/ /g, "%20")
-          .replace(/[^a-zA-Z0-9%]/g, "");
-      }
-      if (Object.keys(options)[index] !== "ECOSIA") {
-        transformed = inputValue
-          .toLowerCase()
-          .replace(/ /g, "+")
-          .replace(/[^a-zA-Z0-9+]/g, "");
-      }
-
-      window.open(
-        `${options[Object.keys(options)[index]]}${transformed}`,
-        "_blank"
-      );
-      setInputValue("");
-      return;
-    }
-  };
-
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
   const handleSubmit = () => {
-    // Prevenir comportamiento por defecto (enviar formulario)
     let transformed;
     if (Object.keys(options)[index] == "ECOSIA") {
       transformed = inputValue
@@ -72,13 +44,12 @@ export default function UltimateSearchBar() {
           type="text"
           value={inputValue}
           onChange={handleChange}
-          /* onKeyDown={handleKeyDown} */
           placeholder="Search..."
-          className="py-0 px-2 h-10 focus:outline-none border-2 border-sky-700 md:text-2xl md:h-14"
+          className="py-0 px-2 h-10 focus:outline-none border-2 border-sky-700 md:text-2xl md:h-14 w-3/4"
         />
         <button
           type="submit"
-          className=" py-0 px-2 h-14 text-2xl border-2 border-sky-700 bg-sky-700"
+          className="py-0 px-2 h-10 border-2 border-sky-700 bg-sky-700 w-1/4 sm:text-2xl sm:h-14 "
         >
           🔎
         </button>

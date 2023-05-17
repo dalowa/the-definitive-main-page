@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <main>
-        <section className="w-full flex justify-center items-center py-5 sm:py-7 md:p-10">
+        <section className="w-full flex justify-center items-center py-5 px-2 sm:py-7 md:p-10">
           <UltimateSearchBar />
         </section>
       </main>

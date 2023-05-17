@@ -40,7 +40,7 @@ export default function UltimateSearchBar() {
     <div className="flex h-44 w-full max-w-sm sm:max-w-2xl md:max-w-4xl">
       <TheSelect options={Object.keys(options)} />
       <form
-        className="w-2/3 box-border bg-sky-700 h-10 sm:h-14"
+        className="w-2/3 box-border bg-sky-700 h-10 sm:h-14 "
         onSubmit={handleSubmit}
       >
         <input

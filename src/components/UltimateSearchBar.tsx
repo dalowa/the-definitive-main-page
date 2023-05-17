@@ -10,6 +10,7 @@ export default function UltimateSearchBar() {
   const [inputValue, setInputValue] = useState("");
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    window.alert(event.code);
     if (event.code === "Enter") {
       event.preventDefault(); // Prevenir comportamiento por defecto (enviar formulario)
       let transformed;

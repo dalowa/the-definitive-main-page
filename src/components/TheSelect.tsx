@@ -1,20 +1,20 @@
 import { Select } from "@/interfaces/components";
 import { useSelectStore } from "@/store/selectStore";
-import Image from "next/image";
+
 import { useState } from "react";
 
 export default function TheSelect({ options }: Select) {
   const index = useSelectStore((state) => state.index);
   const changeIndex = useSelectStore((state) => state.changeIndex);
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOptionsOpen, setIsOptionsOpen] = useState<boolean>(false);
 
   const handleHover = () => {
-    if (isOpen) {
-      setIsOpen(false);
+    if (isOptionsOpen) {
+      setIsOptionsOpen(false);
       return;
     }
-    setIsOpen(true);
+    setIsOptionsOpen(true);
   };
 
   return (
@@ -29,7 +29,7 @@ export default function TheSelect({ options }: Select) {
           {options[index]}
         </h3>
 
-        {isOpen ? (
+        {isOptionsOpen ? (
           <ul className="w-full text-center  bg-green-800 py-2 px-1 gap-3 flex flex-col">
             {options.map((e, i) => (
               <li

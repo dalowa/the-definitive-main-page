@@ -68,7 +68,7 @@ export default function TaskForm() {
           <input
             id="taskName"
             type="text"
-            className="text-slate-100 focus:outline-none py-1 px-2 border box-border bg-black rounded-lg"
+            className="text-black focus:outline-none py-1 px-2 border box-border bg-slate-100 rounded-lg"
             onChange={handleChange(setName)}
             value={name}
             autoComplete="off"
@@ -80,7 +80,7 @@ export default function TaskForm() {
           <textarea
             id="taskDescription"
             title="task description"
-            className="text-slate-100 focus:outline-none py-1 px-2 border box-border bg-black rounded-lg"
+            className="text-black focus:outline-none py-1 px-2 border box-border bg-slate-100 rounded-lg"
             onChange={handleChange(setDescription)}
             value={description}
             autoComplete="off"
@@ -92,7 +92,7 @@ export default function TaskForm() {
           <input
             id="taskDate"
             type="date"
-            className="text-white py-1 px-2 border box-border bg-black rounded-lg"
+            className="text-black py-1 px-2 border box-border bg-slate-100   rounded-lg"
             onChange={handleChange(setDate)}
             value={date}
             /* onChange={(e) =>
@@ -105,7 +105,7 @@ export default function TaskForm() {
           <label htmlFor="taskCategory">Category:</label>
           <select
             id="taskCategory"
-            className="text-white py-1 px-2 border box-border bg-black rounded-lg"
+            className="text-black py-1 px-2 border box-border bg-slatwhite rounded-lg"
             onChange={handleChange(setCategory)}
             value={category}
           >
@@ -119,14 +119,14 @@ export default function TaskForm() {
           {/* <div></div> */}
           <button
             type="submit"
-            className="text-black bg-white border border-white px-2 py-1 rounded-lg transition-colors hover:bg-black hover:text-white duration-300"
+            className="text-white bg-black border border-white px-2 py-1 rounded-lg transition-colors hover:bg-white hover:text-black duration-300"
           >
             Create Task
           </button>
           <button
             type="button"
             onClick={handleDelete}
-            className="text-black bg-white border border-white px-2 py-1 rounded-lg transition-colors hover:bg-black hover:text-white duration-300"
+            className="text-white bg-black border border-white px-2 py-1 rounded-lg transition-colors hover:bg-white hover:text-black duration-300"
           >
             Delete All
           </button>

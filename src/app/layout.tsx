@@ -1,14 +1,34 @@
-import { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
+
 import { Analytics } from "@vercel/analytics/react";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Inter, Bebas_Neue, DM_Mono, Righteous } from "next/font/google";
 
-/* export const metadata: Metadata = {
-  title: "Definitive Page",
-  description: "Dalowa's project",
-}; */
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const Bebas_Neve = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+
+  variable: "--font-bebas",
+});
+
+const DM_mono = DM_Mono({
+  subsets: ["latin"],
+  weight: "400",
+
+  variable: "--font-dm",
+});
+
+const Rightos = Righteous({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-right",
+});
 
 export default function RootLayout({
   children,
@@ -20,7 +40,9 @@ export default function RootLayout({
       {/* <head>
         <title>Next.js</title>
       </head> */}
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} ${Bebas_Neve.variable} ${DM_mono.variable} ${Rightos.variable}`}
+      >
         {children}
         <Analytics />
       </body>

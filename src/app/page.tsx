@@ -1,3 +1,4 @@
+import TaskList from "@/components/TaskList";
 import UltimateSearchBar from "@/components/UltimateSearchBar";
 
 export const metadata = {
@@ -17,9 +18,12 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <main className="bg-gray-900 min-h-screen">
-        <section className="w-full flex justify-center items-center py-5 px-2 sm:py-7 md:p-10">
+      <main className="bg-black min-h-screen">
+        <section className="w-full flex justify-center items-center py-5 px-5 sm:py-7 md:p-10">
           <UltimateSearchBar />
+        </section>
+        <section className="w-full flex flex-col justify-center items-center py-5 px-5 gap-5 lg:flex-row">
+          <TaskList />
         </section>
       </main>
     </>

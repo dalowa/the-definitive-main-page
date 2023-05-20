@@ -1,26 +1,38 @@
+import { Task } from '@/classes/Task'
+import { MouseEventHandler } from 'react'
 import {create} from 'zustand'
+import {persist}  from 'zustand/middleware'
+import TaskList from '../components/TaskList';
 
 
-interface Task {
-    id: number
-    name: string
-    description: string
-    category: string
-    priority: number;
-}
 
-interface TasksList {
+interface TaskListStorage {
     tasksList: Task[]
-    addTask: (t: Task) => void
-    
+    taskNumber: number
+    addTask: (tarea: Task) => void
+    deleteTask: (id: number) => void
+    deleteAll: (e:[]) => void
 }
 
 
-
-export const useTasksListStore = create<TasksList>((set, get) => ({
+export const useTasksListStore = create(persist<TaskListStorage>
+    ((set, get) => ({
     tasksList: [],
-    addTask: (t:Task) => {
+    taskNumber: 100,
+    addTask: (tarea:Task) => {
+        const { tasksList, taskNumber } = get()
+        set({tasksList: [...tasksList].concat(tarea), taskNumber: taskNumber + 1})
+    },
+    deleteTask: (id: number) =>{
+        const {tasksList} = get()
+        set({tasksList: [...tasksList].filter(e => e.id !== id)})
+    } ,
+    deleteAll: (e:[]) => {
         const { tasksList } = get()
-        set({tasksList: tasksList})
+        console.log("Delete")
+        set({tasksList: e})
+    }  
+    }), {
+        name: "tasks-dalowa"
     }
-}))
+))

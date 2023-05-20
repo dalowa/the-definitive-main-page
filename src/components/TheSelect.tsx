@@ -36,7 +36,7 @@ export default function TheSelect({ options }: Select) {
           <ul className="w-full text-center  bg-slate-100  py-1 px-1 gap-1 flex flex-col z-10">
             {options.map((e, i) => (
               <li
-                className="cursor-pointer text-slate-100 py-1 px-2 border border-gray-900 bg-black hover:bg-green-200"
+                className="cursor-pointer text-slate-100 py-1 px-2 border border-gray-900 bg-black hover:bg-slate-100 hover:text-black"
                 key={i}
                 onClick={() => changeIndex(i)}
               >

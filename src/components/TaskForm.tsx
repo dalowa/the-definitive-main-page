@@ -34,7 +34,6 @@ export default function TaskForm() {
       setName("");
       setDescription("");
       setDate("");
-      setCategory("");
     } else {
       console.log("No está completo");
       console.log(date);

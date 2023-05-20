@@ -33,7 +33,7 @@ export class Task{
 
     const difference = Math.round(newDate -  actualDate)
     
-    if(difference < 3){      
+    if(difference < 2){      
      return 100
     }
     if(difference < 5){      

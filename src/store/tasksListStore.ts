@@ -21,7 +21,9 @@ export const useTasksListStore = create(persist<TaskListStorage>
     taskNumber: 100,
     addTask: (tarea:Task) => {
         const { tasksList, taskNumber } = get()
-        set({tasksList: [...tasksList].concat(tarea), taskNumber: taskNumber + 1})
+        set({tasksList: [...tasksList].concat(tarea).sort((a,b)=> {
+            return b.importantNumber - a.importantNumber
+          }), taskNumber: taskNumber + 1})
     },
     deleteTask: (id: number) =>{
         const {tasksList} = get()

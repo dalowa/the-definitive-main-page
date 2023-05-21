@@ -27,16 +27,14 @@ export const useTasksListStore = create(persist<TaskListStorage>
     },
     deleteTask: (id: number) =>{
         const {tasksList} = get()
+        tasksList.forEach(e => e.getImportantNumber())
         set({tasksList: [...tasksList].filter(e => e.id !== id)})
     } ,
-    deleteAll: (e:[]) => {
+        deleteAll: (e:[]) => {
         const { tasksList } = get()
         
         set({tasksList: e})
-    }, sortList: () => {
-        const { tasksList } = get()
-        set({tasksList: tasksList})
-    }  
+    } 
     }), {
         name: "tasks-dalowa"
     }

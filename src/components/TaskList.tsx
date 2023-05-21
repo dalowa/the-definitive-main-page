@@ -25,7 +25,9 @@ export default function TaskList() {
               category={e.category}
               description={e.description}
               name={e.name}
+              deadline={e.dateLimit}
               importantNumber={e.importantNumber}
+              /* tailwindColor={e.tailwindColor} */
               id={e.id}
               key={e.id}
             />

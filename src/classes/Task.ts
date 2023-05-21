@@ -22,6 +22,20 @@ export const Categories:Category[] = [
   "TECHNOLOGY"
 ];
 
+export const categoriesColors:{[key:string]:string} = {
+  WORK: "border-amber-600",
+  STUDY: "border-yellow-300",
+  HOME: "border-pink-400",
+  "HEALTH AND WELLNESS": "border-red-700",
+  
+  "FINANCES": "border-cyan-400",
+  SOCIAL: "border-orange-600",
+  LEISURE: "border-green-500",
+  "PERSONAL PROJECTS": "border-lime-400",
+  ORGANIZATION: "border-blue-700",
+  TECHNOLOGY: "border-violet-700"
+};
+
 export class Task{
   public id: number 
   public category: Category
@@ -29,7 +43,7 @@ export class Task{
   public description: string
   public dateLimit: Date
   public importantNumber: number
-   
+  
 
   constructor(
     category: Category, 
@@ -45,68 +59,15 @@ export class Task{
     this.importantNumber = this.getImportantNumber()
     this.id = id
     
-  }
-
-  private getDatePriority():number {
-    const actualDate = new Date().getTime()/1000/60/60/24;
-    const newDate = this.dateLimit.getTime()/1000/60/60/24;
-
-    const difference = Math.round(newDate -  actualDate)
-    
-    if(difference < 2){      
-     return 100
-    }
-    if(difference < 5){      
-      return 90
-    }
-    if(difference < 7){     
-      return 80
-    }
-    if(difference < 9){
-      return 70
-    }
-    if(difference < 11){
-      return 60
-    }
-    if(difference < 13){
-      return 50
-    }
-    if(difference < 15){
-      return 40
-    }
-    if(difference < 17){
-      return 30
-    }
-    if(difference < 19){
-      return 20
-    }
-    return 10
-  }
-
-  private getCategoryPriority():string {
-
-    const categories:{[key:string]:string} = {
-      WORK: "",
-      STUDY: "",
-      HOME: "",
-      "HEALTH AND WELLNESS": "",
-      FINANCES: "",
-      SOCIAL: "",
-      LEISURE: "",
-      "PERSONAL PROJECTS": "",
-      ORGANIZATION: "",
-      TECHNOLOGY: ""
-    };
-    return categories[this.category]
     
   }
 
-  public getImportantNumber():number{
-    /* this.importantNumber = this.getCategoryPriority() + this.getDatePriority()
-    return this.getCategoryPriority() + this.getDatePriority() */
-    this.importantNumber = this.getDatePriority()
-    return this.getDatePriority()
+  public getImportantNumber():number {
+    this.importantNumber = Math.round(this.dateLimit.getTime()/1000/60/60 -  new Date().getTime()/1000/60/60)
+    return Math.round(this.dateLimit.getTime()/1000/60/60 -  new Date().getTime()/1000/60/60)
   }
+
+
 }
 
 
@@ -135,4 +96,23 @@ export class Task{
   public show():void {
     console.log(this.lista)
   } 
+} */
+
+
+/* private getTailwindColor():string {
+
+  const categories:{[key:string]:string} = {
+    WORK: "bg-amber-600",
+    STUDY: "bg-yellow-300",
+    HOME: "bg-pink-400",
+    "HEALTH AND WELLNESS": "bg-red-700",
+    FINANCES: "bg-cyan-400",
+    SOCIAL: "bg-orange-600",
+    LEISURE: "bg-green-500",
+    "PERSONAL PROJECTS": "bg-lime-400",
+    ORGANIZATION: "bg-blue-700",
+    TECHNOLOGY: "bg-violet-700"
+  };
+  return categories[this.category]
+  
 } */

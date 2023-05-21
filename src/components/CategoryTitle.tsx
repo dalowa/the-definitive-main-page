@@ -3,76 +3,76 @@ import { Category } from "@/classes/Task";
 function CategoryTitle({ cat }: { cat: Category }) {
   if (cat == "WORK") {
     return (
-      <h3 className="bg-amber-600 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+      <h3 className="bg-amber-600 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1  xl:text-3xl">
         {cat}
       </h3>
     );
   }
   if (cat == "STUDY") {
     return (
-      <h3 className="bg-yellow-300 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+      <h3 className="bg-yellow-300 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1  xl:text-3xl">
         {cat}
       </h3>
     );
   }
   if (cat == "HOME") {
     return (
-      <h3 className="bg-pink-400 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+      <h3 className="bg-pink-400 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1  xl:text-3xl">
         {cat}
       </h3>
     );
   }
   if (cat == "HEALTH AND WELLNESS") {
     return (
-      <h3 className="bg-red-700 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+      <h3 className="bg-red-700 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1  xl:text-3xl">
         {cat}
       </h3>
     );
   }
   if (cat == "FINANCES") {
     return (
-      <h3 className="bg-cyan-400 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+      <h3 className="bg-cyan-400 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1  xl:text-3xl">
         {cat}
       </h3>
     );
   }
   if (cat == "SOCIAL") {
     return (
-      <h3 className="bg-orange-600 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+      <h3 className="bg-orange-600 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1  xl:text-3xl">
         {cat}
       </h3>
     );
   }
   if (cat == "LEISURE") {
     return (
-      <h3 className="bg-green-500 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+      <h3 className="bg-green-500 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1  xl:text-3xl">
         {cat}
       </h3>
     );
   }
   if (cat == "PERSONAL PROJECTS") {
     return (
-      <h3 className="bg-lime-400 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+      <h3 className="bg-lime-400 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1  xl:text-3xl">
         {cat}
       </h3>
     );
   }
   if (cat == "ORGANIZATION") {
     return (
-      <h3 className="bg-blue-700 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+      <h3 className="bg-blue-700 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1  xl:text-3xl">
         {cat}
       </h3>
     );
   }
   if (cat == "TECHNOLOGY") {
     return (
-      <h3 className="bg-violet-700 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+      <h3 className="bg-violet-700 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1 xl:text-3xl">
         {cat}
       </h3>
     );
   }
   return (
-    <h3 className="bg-white text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
+    <h3 className="bg-white text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1  xl:text-3xl">
       {cat}
     </h3>
   );

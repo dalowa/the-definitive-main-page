@@ -32,7 +32,7 @@ export default function Task({
   };
 
   return (
-    <div className="text-white bg-black border-2 py-2 px-3 rounded-lg flex flex-col gap-2 w-full">
+    <div className="text-white bg-black border-2 py-2 px-3 rounded-lg flex flex-col gap-2 w-full xl:max-w-sm">
       <div className="flex flex-col justify-center items-center">
         <CategoryTitle cat={category} />
         <h2 className="font-right text-left w-full uppercase">{name}</h2>

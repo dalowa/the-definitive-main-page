@@ -22,7 +22,7 @@ export default function Home() {
         <section className="w-full flex justify-center items-center py-5 px-5 sm:py-7 md:p-10">
           <UltimateSearchBar />
         </section>
-        <section className="w-full flex flex-col justify-center items-center py-5 px-5 gap-5 lg:flex-row">
+        <section className="flex justify-center">
           <TaskList />
         </section>
       </main>

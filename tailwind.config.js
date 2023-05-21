@@ -17,6 +17,9 @@ module.exports = {
         dm: ["var(--font-dm)"],
         right: ["var(--font-right)"],
       },
+      height: {
+        140: "35rem",
+      },
     },
   },
   plugins: [],

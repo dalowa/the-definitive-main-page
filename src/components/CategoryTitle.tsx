@@ -1,6 +1,6 @@
 import { Category } from "@/classes/Task";
 
-function H3CategoryWithColor({ cat }: { cat: Category }) {
+function CategoryTitle({ cat }: { cat: Category }) {
   if (cat == "WORK") {
     return (
       <h3 className="bg-amber-600 text-black py-0 px-2 rounded-lg font-bebas tracking-widest text-xl my-1">
@@ -78,7 +78,7 @@ function H3CategoryWithColor({ cat }: { cat: Category }) {
   );
 }
 
-export default H3CategoryWithColor;
+export default CategoryTitle;
 /* export const selectColorBorder = (cat: Category, tailclass: string) => {
   if (cat == "WORK") {
     return `border-amber-600 ${tailclass}`;

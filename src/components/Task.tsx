@@ -3,7 +3,7 @@
 import { Category, categoriesColors } from "@/classes/Task";
 
 import { useTasksListStore } from "@/store/tasksListStore";
-import H3CategoryWithColor from "./h3CategoryWithColor";
+import CategoryTitle from "./CategoryTitle";
 import { useState } from "react";
 
 interface Task {
@@ -34,7 +34,7 @@ export default function Task({
   return (
     <div className="text-white bg-black border-2 py-2 px-3 rounded-lg flex flex-col gap-2 w-full">
       <div className="flex flex-col justify-center items-center">
-        <H3CategoryWithColor cat={category} />
+        <CategoryTitle cat={category} />
         <h2 className="font-right text-left w-full uppercase">{name}</h2>
       </div>
       <p className="font-dm">{description}</p>

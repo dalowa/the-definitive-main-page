@@ -1,6 +1,26 @@
-export type Category = "STUDY" | "FAMILY" | "PERSONAL" | "HOME" | "SOCIAL" | "HEALTH" | "ANYTHING" | "WORK" | string ;
+export type Category = "WORK" |
+"STUDY" |
+"HOME" |
+"HEALTH AND WELLNESS" |
+"FINANCES" |
+"SOCIAL" |
+"LEISURE" |
+"PERSONAL PROJECTS" |
+"ORGANIZATION" |
+"TECHNOLOGY" ;
 
-export const Categories:Category[] = ["STUDY" , "FAMILY" , "PERSONAL" , "HOME" , "SOCIAL" , "HEALTH" , "ANYTHING", "WORK"]
+export const Categories:Category[] = [
+  "WORK",
+  "STUDY",
+  "HOME",
+  "HEALTH AND WELLNESS",
+  "FINANCES",
+  "SOCIAL",
+  "LEISURE",
+  "PERSONAL PROJECTS",
+  "ORGANIZATION",
+  "TECHNOLOGY"
+];
 
 export class Task{
   public id: number 
@@ -63,24 +83,29 @@ export class Task{
     return 10
   }
 
-  private getCategoryPriority():number {
+  private getCategoryPriority():string {
 
-    const categories:{[key:string]:number} = {
-      STUDY: 90,
-      FAMILY: 85,
-      PERSONAL: 70,
-      HOME: 65,
-      SOCIAL: 60,
-      HEALTH: 95,
-      WHATEVER: 40
-    }
+    const categories:{[key:string]:string} = {
+      WORK: "",
+      STUDY: "",
+      HOME: "",
+      "HEALTH AND WELLNESS": "",
+      FINANCES: "",
+      SOCIAL: "",
+      LEISURE: "",
+      "PERSONAL PROJECTS": "",
+      ORGANIZATION: "",
+      TECHNOLOGY: ""
+    };
     return categories[this.category]
     
   }
 
   public getImportantNumber():number{
-    this.importantNumber = this.getCategoryPriority() + this.getDatePriority()
-    return this.getCategoryPriority() + this.getDatePriority()
+    /* this.importantNumber = this.getCategoryPriority() + this.getDatePriority()
+    return this.getCategoryPriority() + this.getDatePriority() */
+    this.importantNumber = this.getDatePriority()
+    return this.getDatePriority()
   }
 }
 

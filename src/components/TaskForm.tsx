@@ -14,7 +14,7 @@ export default function TaskForm() {
   const [name, setName] = useState<string>("");
   const [description, setDescription] = useState<string>();
   const [date, setDate] = useState<string>("");
-  const [category, setCategory] = useState<Category | string>("STUDY");
+  const [category, setCategory] = useState<Category>("STUDY");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,7 +23,6 @@ export default function TaskForm() {
       name != undefined &&
       description != undefined &&
       date != undefined &&
-      category != "" &&
       name != "" &&
       description != "" &&
       date != ""

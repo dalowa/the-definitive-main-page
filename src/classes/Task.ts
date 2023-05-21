@@ -63,6 +63,8 @@ export class Task{
   }
 
   public getImportantNumber():number {
+    
+
     this.importantNumber = Math.round(this.dateLimit.getTime()/1000/60/60 -  new Date().getTime()/1000/60/60)
     return Math.round(this.dateLimit.getTime()/1000/60/60 -  new Date().getTime()/1000/60/60)
   }

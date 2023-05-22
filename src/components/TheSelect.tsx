@@ -1,9 +1,8 @@
-import { Select } from "@/interfaces/components";
-import { useSelectStore } from "@/store/selectStore";
-
 import { useState } from "react";
 
-export default function TheSelect({ options }: Select) {
+import { useSelectStore } from "@/store/selectStore";
+
+export default function TheSelect({ options }: { options: string[] }) {
   const index = useSelectStore((state) => state.index);
   const changeIndex = useSelectStore((state) => state.changeIndex);
 
@@ -27,13 +26,13 @@ export default function TheSelect({ options }: Select) {
       >
         <h3
           className="w-full bg-black text-center py-3 px-3 text-2xl text-white border-t border-b border-l border-r-0 border-slate-200 box-border
-                       md:text-4xl md:py-2 "
+                     md:text-4xl md:py-2 "
         >
           {options[index]}
         </h3>
 
         {isOptionsOpen ? (
-          <ul className="w-full text-center  bg-slate-100  py-1 px-1 gap-1 flex flex-col z-10">
+          <ul className="w-full text-center bg-slate-100  py-1 px-1 gap-1 flex flex-col z-10">
             {options.map((e, i) => (
               <li
                 className="cursor-pointer text-slate-100 py-1 px-2 border border-gray-900 bg-black hover:bg-slate-100 hover:text-black"

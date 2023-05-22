@@ -40,7 +40,7 @@ export default function UltimateSearchBar() {
     <div className="flex h-12 w-full sm:max-w-2xl md:max-w-6xl ">
       <TheSelect options={Object.keys(options)} />
       <form
-        className="w-2/3 bg-black  sm:h-14 border-t border-r border-b border-slate-200 py-7 flex justify-center items-center text-2xl"
+        className="w-2/3 bg-black sm:h-14 border-t border-r border-b border-slate-200 py-7 flex justify-center items-center text-2xl"
         onSubmit={handleSubmit}
       >
         <input

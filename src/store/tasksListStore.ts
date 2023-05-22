@@ -1,15 +1,23 @@
-import { Task } from '@/classes/Task'
+import { Category, Task } from '@/classes/Task'
 import { MouseEventHandler } from 'react'
 import {create} from 'zustand'
 import {persist}  from 'zustand/middleware'
-import TaskList from '../components/TaskList';
+
+interface TaskObject {
+   id: number 
+   category: Category
+   name: string
+   description: string
+   dateLimit: Date
+   importantNumber: number
+}
 
 
 
 interface TaskListStorage {
-    tasksList: Task[]
+    tasksList: TaskObject[]
     taskNumber: number
-    addTask: (tarea: Task) => void
+    addTask: (tarea: TaskObject) => void
     deleteTask: (id: number) => void
     deleteAll: (e:[]) => void
 }
@@ -19,10 +27,13 @@ export const useTasksListStore = create(persist<TaskListStorage>
     ((set, get) => ({
     tasksList: [],
     taskNumber: 100,
-    addTask: (tarea:Task) => {
+    addTask: (tarea:TaskObject) => {
         const { tasksList, taskNumber } = get()
-        tasksList.forEach(e => e.importantNumber)
-        set({tasksList: [...tasksList].concat(tarea).sort((a,b)=> {
+        
+        set({tasksList: [...tasksList].
+                         concat(tarea).
+                         map(e => ({...e, importantNumber: Math.round(e.dateLimit.getTime()/1000/60/60 - new Date().getTime()/1000/60/60)})).
+                         sort((a,b)=> {
             return a.importantNumber - b.importantNumber
           }), taskNumber: taskNumber + 1})
     },

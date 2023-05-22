@@ -29,10 +29,19 @@ export default function TaskList() {
       md:h-140 md:w-1/2
       "
       >
-        <h2 className="text-slate-100 font-bebas text-3xl xl:text-4xl">
+        <h2
+          className="
+        text-slate-100 font-bebas text-3xl 
+        xl:text-4xl
+        "
+        >
           Task List
         </h2>
-        <h4 className="text-slate-100 font-dm text-xl xl:text-2xl">{`Current pending tasks: ${taskList?.length}`}</h4>
+        <h4
+          className="
+        text-slate-100 font-dm text-xl 
+        xl:text-2xl"
+        >{`Current pending tasks: ${taskList?.length}`}</h4>
         <div className="flex w-full flex-col bg-black py-5 px-5 border-2 border-gray-50 my-5 gap-4 h-full overflow-auto items-center">
           {taskList?.map((e) => (
             <Task
@@ -41,7 +50,6 @@ export default function TaskList() {
               name={e.name}
               deadline={e.dateLimit}
               importantNumber={e.importantNumber}
-              /* tailwindColor={e.tailwindColor} */
               id={e.id}
               key={e.id}
             />

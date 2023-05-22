@@ -57,15 +57,12 @@ export default function TaskForm() {
       );
       const fecha = new Date(String(date) + "T" + hourandminute + ":00");
       const nuevo = new Task(category, name, description, fecha, taskId);
-      console.log(fecha);
 
       addTask(nuevo);
       setName("");
       setDescription("");
       setDate("");
     } else {
-      console.log("No está completo");
-      console.log(date);
     }
   };
 
@@ -90,20 +87,29 @@ export default function TaskForm() {
     "
     >
       <form
-        className="text-slate-100 w-full font-dm flex flex-col gap-3 md:justify-between md:h-full"
+        className="text-slate-100 w-full font-dm flex flex-col gap-3 
+                     md:justify-between md:h-full"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-center text-slate-100 p-2 font-bebas tracking-widest text-2xl xl:text-3xl">
+        <h1
+          className="text-center text-slate-100 p-2 font-bebas tracking-widest text-2xl 
+                     xl:text-3xl"
+        >
           Create a new Task
         </h1>
         <div className="flex justify-between items-center text-sm ">
-          <label htmlFor="taskName" className="md:text-lg xl:text-2xl">
+          <label
+            htmlFor="taskName"
+            className="md:text-lg 
+                       xl:text-2xl"
+          >
             Name:
           </label>
           <input
             id="taskName"
             type="text"
-            className="text-black focus:outline-none py-1 px-2 border box-border bg-slate-100 rounded-lg xl:text-xl"
+            className="text-black focus:outline-none py-1 px-2 border box-border bg-slate-100 rounded-lg 
+                         xl:text-xl"
             onChange={handleChange(setName)}
             value={name}
             autoComplete="off"
@@ -135,9 +141,6 @@ export default function TaskForm() {
               className="text-black py-1 px-2 border box-border bg-slate-100  rounded-lg xl:text-xl"
               onChange={handleChange(setDate)}
               value={date}
-              /* onChange={(e) =>
-              console.log(new Date(String(e.target.value) + "T00:00:00"))
-            } */
             />
             <div className="flex">
               <select
@@ -206,7 +209,6 @@ export default function TaskForm() {
         </div>
         <hr />
         <div className="flex justify-between">
-          {/* <div></div> */}
           <button
             type="submit"
             className="

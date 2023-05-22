@@ -1,5 +1,5 @@
 import { Category, Task } from '@/classes/Task'
-import { MouseEventHandler } from 'react'
+
 import {create} from 'zustand'
 import {persist}  from 'zustand/middleware'
 
@@ -8,7 +8,7 @@ interface TaskObject {
    category: Category
    name: string
    description: string
-   dateLimit: Date
+   dateLimit: string
    importantNumber: number
 }
 
@@ -32,7 +32,7 @@ export const useTasksListStore = create(persist<TaskListStorage>
         
         set({tasksList: [...tasksList].
                          concat(tarea).
-                         map(e => ({...e, importantNumber: Math.round(e.dateLimit.getTime()/1000/60/60 - new Date().getTime()/1000/60/60)})).
+                         map(e => ({...e, importantNumber: Math.round(new Date(e.dateLimit).getTime()/1000/60/60 - new Date().getTime()/1000/60/60)})).
                          sort((a,b)=> {
             return a.importantNumber - b.importantNumber
           }), taskNumber: taskNumber + 1})

@@ -55,15 +55,17 @@ export default function TaskForm() {
         Number(dateMinute),
         formatTime
       );
-      const fecha = new Date(String(date) + "T" + hourandminute + ":00");
+      const fecha = String(date) + "T" + hourandminute + ":00";
       const nuevo = new Task(category, name, description, fecha, taskId);
 
       addTask(nuevo);
       setName("");
       setDescription("");
       setDate("");
-    } else {
+      console.log("Creado");
+      return;
     }
+    console.log("No creado");
   };
 
   const handleChange =

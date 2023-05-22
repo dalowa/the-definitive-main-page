@@ -41,21 +41,21 @@ export class Task{
   public category: Category
   public name: string
   public description: string
-  public dateLimit: Date
+  public dateLimit: string
   public importantNumber: number
   
   constructor(
     category: Category, 
     name: string, 
     description: string, 
-    dateLimit: Date,
+    dateLimit: string,
     id: number
     ){
     this.category = category
     this.name = name
     this.description = description
     this.dateLimit = dateLimit
-    this.importantNumber = Math.round(this.dateLimit.getTime()/1000/60/60 -  new Date().getTime()/1000/60/60)
+    this.importantNumber = Math.round(new Date(this.dateLimit).getTime()/1000/60/60 -  new Date().getTime()/1000/60/60)
     this.id = id
   }
 

@@ -1,22 +1,39 @@
-import {create} from 'zustand';
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
-interface SelectStore {
-    index: number;
-    changeIndex: (i: number) => void;
+interface SearchStore {
+  selectedEngineIndex: number;
+  searchHistory: string[];
+  changeSelectedEngine: (index: number) => void;
+  addToHistory: (query: string) => void;
+  clearHistory: () => void;
 }
 
-
-export const useSelectStore = create<SelectStore>((set, get)=>({
-    index: 0,
-    changeIndex: (i:number) => {
-        const { index } = get()
-        set({index: i})
+export const useSearchStore = create(
+  persist<SearchStore>(
+    (set, get) => ({
+      selectedEngineIndex: 0,
+      searchHistory: [],
+      
+      changeSelectedEngine: (index: number) => {
+        set({ selectedEngineIndex: index });
+      },
+      
+      addToHistory: (query: string) => {
+        const { searchHistory } = get();
+        if (query.trim() && !searchHistory.includes(query)) {
+          const newHistory = [query, ...searchHistory].slice(0, 10); // Keep only last 10 searches
+          set({ searchHistory: newHistory });
+        }
+      },
+      
+      clearHistory: () => {
+        set({ searchHistory: [] });
+      }
+    }),
+    {
+      name: "search-settings",
+      version: 1,
     }
-}));
-
-/* changeIndex: (i:number) => {
-        const { index } = get()
-        set({index: index + i})
-    }  */
-
-    /* changeIndex: (i:number) => set((state) => ({index: i})) */
+  )
+);
